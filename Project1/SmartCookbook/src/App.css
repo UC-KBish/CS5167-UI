@@ -1,44 +1,59 @@
-html, body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    height: 100%;
-  }
-  
-  /* Classes */
-  .flex {
-    display: flex;
-    justify-content: space-evenly;
-    flex: 1 1 auto;
-    top: 0;
-  }
-
-  .flexVerticallyAlligned {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 60px;
-    background-color: #FFFFFFC0;
-    z-index: 10;
-    position: sticky;
-    top: 0;
+html,
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  height: 100%;
+  font-size: 2vw;
 }
 
-.blurred-element {
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #FFFFFFC0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0.5rem;
+}
+
+/* Classes */
+.flex {
+  display: flex;
+  justify-content: space-evenly;
+  flex: 1 1 auto;
+  top: 0;
+}
+
+.flexVerticallyAlligned {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+  background-color: #FFFFFFC0;
+  z-index: 10;
+  position: sticky;
+  top: 0;
+}
+
+.blur {
   filter: blur(5px);
 }
 
 #menu {
   position: fixed;
   top: 0;
-  right: -250px;
-  /* Hide the menu by moving it to the right */
-  width: 250px;
+  right: -100vw;
+  width: 100%;
   height: 100%;
   background-color: #333;
   color: #fff;
   transition: right 0.3s ease;
-  /* Add a transition for smooth animation */
 }
 
 #menu ul {
@@ -47,15 +62,29 @@ html, body {
 }
 
 #menu ul li {
+  text-decoration: none;
+  color: #ffffff;
   padding: 10px;
 }
 
-#menu-button {
-  position: fixed;
-  top: 10px;
-  right: 10px;
+#menu-button,
+#menu-button-back {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  transition: right 0.3s ease;
   background-color: #00000000;
   border: none;
-  padding: 10px 20px;
   cursor: pointer;
+  height: 3rem;
+}
+
+#menu-button img,
+#menu-button-back img {
+  height: 80%;
+  margin-block: 10%;
+}
+
+#menu-button-back {
+  right: -2.5rem;
 }
