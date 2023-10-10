@@ -1,6 +1,7 @@
 // import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './styles/App.css'
+import './styles/RecipeSearch.css'
 
 import RecipeContainer from './components/RecipeContainer';
 import TabletBoundingBox from './components/TabletBoundingBox'
@@ -20,5 +21,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <h2 id='RecipeSearchHeader' style={{ margin: '5px' }}>Popular Recipes:</h2>
       <RecipeContainer />
     </TabletBoundingBox>
+    {/* {sortRecipes()} */}
   </React.StrictMode>,
 )

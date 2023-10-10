@@ -5,15 +5,22 @@ function HamburgerMenu() {
         const menu = document.getElementById('menu');
         const menu_button = document.getElementById('menu-button');
         const menu_button_back = document.getElementById('menu-button-back');
+        const blur_screen = document.getElementById('blur-screen');
 
         if (menu.style.left === '60%') {
             menu.style.left = '100%';
             menu_button.style.right = '0.5rem';
             menu_button_back.style.right = '-2rem';
+            blur_screen.style.top = '-100vh';
+            blur_screen.style.backdropFilter = 'blur(0px)';
+            blur_screen.style.backgroundColor = '#ffffff00';
         } else {
             menu.style.left = '60%';
             menu_button.style.right = '2.5rem';
             menu_button_back.style.right = '0.5rem';
+            blur_screen.style.top = '0vh';
+            blur_screen.style.backdropFilter = 'blur(5px)';
+            blur_screen.style.backgroundColor = '#ffffff70';
         }
     };
 
@@ -22,7 +29,8 @@ function HamburgerMenu() {
 
     return (<div id='HamburgerContainer'>
         <p id='userdata' hidden>{userStr}</p>
-        <div id="menu" class="hidden">
+        <div id='blur-screen' className='blur'></div>
+        <div id='menu'>
             <a id='UserContainer' href='/'>
                 <img id='UserPhoto' src={user.Photo} />
                 <h3 id='UserName'>{user.UserName}</h3>

@@ -1,37 +1,64 @@
 <!DOCTYPE html>
 <html>
-  <style>
-    /* styles.css */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(200px, 1fr)); /* Adjust column width as needed */
-    gap: 10px; /* Adjust gap between items as needed */
-    max-width: 800px; /* Adjust the maximum width of the grid container as needed */
-    margin: 0 auto; /* Center the grid horizontally */
-}
-
-.grid-item {
-    background-color: #ccc; /* Add styles to your grid items */
-    padding: 10px;
-}
-
-  </style>
 <head>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .masonry {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .masonry-item {
+            position: relative;
+            break-inside: avoid;
+            background-color: #eee; /* Background color for each item */
+            border: 1px solid #ccc; /* Border for each item */
+        }
+
+        .masonry-item img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
-    <div class="grid-container">
-        <div class="grid-item">Item 1</div>
-        <div class="grid-item">Item 2</div>
-        <div class="grid-item">Item 3</div>
-        <div class="grid-item">Item 4</div>
-        <div class="grid-item">Item 4</div>
-        <div class="grid-item">Item 4</div>
-        <div class="grid-item">Item 4</div>
-        <div class="grid-item">Item 4</div>
-        <div class="grid-item">Item 4</div>
-        <div class="grid-item">Item 4</div>
-        <!-- Add more grid items as needed -->
+    <div class="masonry">
+        <div class="masonry-item">
+            <img src="public/Burrito.jpg" alt="Image 1">
+        </div>
+        <div class="masonry-item">
+            <img src="public/Lasagna.jpg" alt="Image 2">
+        </div>
+        <div class="masonry-item">
+            <img src="public/Lasagna.jpg" alt="Image 2">
+        </div>
+        <div class="masonry-item">
+            <img src="public/Lasagna.jpg" alt="Image 2">
+        </div>
+        <div class="masonry-item">
+            <img src="public/Lasagna.jpg" alt="Image 2">
+        </div>
+        <div class="masonry-item">
+            <img src="public/Lasagna.jpg" alt="Image 2">
+        </div>
+        <div class="masonry-item">
+            <img src="public/Lasagna.jpg" alt="Image 2">
+        </div>
+        <div class="masonry-item">
+            <img src="public/Lasagna.jpg" alt="Image 2">
+        </div>
+        <div class="masonry-item">
+            <img src="public/Lasagna.jpg" alt="Image 2">
+        </div>
+        <!-- Add more masonry-items for additional images -->
     </div>
 </body>
 </html>

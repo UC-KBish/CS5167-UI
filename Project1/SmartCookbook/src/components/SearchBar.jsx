@@ -9,17 +9,22 @@ function sortRecipes(sortVal){
         
     }
 
-    //     let recipes = [];
+    const RecipeContainer = document.getElementById('RecipeContainer')
+    let tempRecipeContainer = RecipeContainer;
 
-    // recipes.push([]);
-    // recipes.push([]);
+    [...Array(RecipeContainer.children.item(0).childElementCount)].forEach((_, index) => {
+      console.log(RecipeContainer.children.item(0).children.item(index))
+      console.log(RecipeContainer.children.item(1).children.item(index))
 
-    // let side = 0;
+      if (index === 1) {
+        document.getElementById('recipe-' + index).style.display = 'none'
+      }
+    }) 
 
-    // data.map((recipe, index) => {
-    //     recipes[side].push(<RecipeCard name={recipe.Name} imageName={recipe.Image} backgroundColor="#FFFFFF"></RecipeCard>)
-    //     side = (side + 1) % 2; 
-    // })
+    
+
+
+    // alert("HERE")
  
 }
 
