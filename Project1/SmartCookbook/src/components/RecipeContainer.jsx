@@ -14,7 +14,7 @@ function RecipeBottomBanner() {
 function RecipeCard(props) {
 
     return (
-        <div id={'recipe-' + props.id} style={{ position: 'relative', backgroundColor: '#a0a0a0', borderRadius: '5px', overflow: 'hidden', minWidth: '100%', marginBlock: '10px' }}>
+        <div className='RecipeCard' id={'recipe-' + props.id}>
             <h3 style={{ padding: '10px', margin: 0 }}>{props.name}</h3>
             <img src={props.imageName} style={{ width: '90%', margin: '5%', borderRadius: '5px' }}></img>
             {RecipeBottomBanner()}
@@ -26,7 +26,7 @@ function RecipeContainer() {
 
     return (
         <a href='/burger.html' style={{ textDecoration: 'none', color: 'black' }}>
-            <div className='flex' id='RecipeContainer'>
+            <div id='RecipeContainer'>
                 <div>
                     {recipeData.map((recipe, index) => {
                         if (index % 2 === 0) {
@@ -39,6 +39,11 @@ function RecipeContainer() {
                         if (index % 2 === 1) {
                             return <RecipeCard id={index} name={recipe.Name} imageName={recipe.Image} key={index}></RecipeCard>
                     }
+                    })}
+                </div>
+                <div hidden>
+                    {recipeData.map((recipe, index) => {
+                        return <RecipeCard id={index + '-copy'} name={recipe.Name} imageName={recipe.Image} key={index}></RecipeCard>
                     })}
                 </div>
             </div>

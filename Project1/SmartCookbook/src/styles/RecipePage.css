@@ -1,0 +1,28 @@
+.recipe-instruction-card {
+    margin: 1rem;
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
+    background-color: #a0a0a0;
+    border-radius: 1rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.recipe-instruction-card > h2 {
+    margin: 0;
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+    background-color: #a0a0a0;
+}
+
+.recipe-instruction-card > div > img {
+    border-radius: 1rem;
+}
+
+.recipe-instruction-card > ul {
+    margin-top: 0;
+    padding-inline: 1rem;
+}
+
+.recipe-instruction-card > ul > li {
+    padding-bottom: 0.25rem;
+}

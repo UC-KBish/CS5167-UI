@@ -1,34 +1,19 @@
 // import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './styles/App.css'
+import './styles/RecipePage.css'
 
-import DescriptionSegment from './components/DescriptionSegment';
-import CookwareSegment from './components/CookwareSegment';
-import IngredientsSegment from './components/IngredientsSegment';
-import StepsSegment from './components/StepsSegment';
+import Instructions from './components/Instructions';
 import TabletBoundingBox from './components/TabletBoundingBox'
 import Header from './components/Header'
 
-import React, { useRef, useEffect } from 'react';
-
-function RecipeSearchBar(){
-  // RecipeSearch = document.getElementById('RecipeSearchBar');
-  // RecipeSearchHeader = document.getElementById('RecipeSearchHeader');
-
-  // RecipeSearchHeader.innerHTML = RecipeSearchBar.value;
-  return (<input id='RecipeSearchBar' type='text' placeholder='Search For Recipe' style={{ position: 'absolute', top: '40%', right: '25%', backgroundColor: "#FFFFFFC0", height: '15%', width: '50%', borderRadius: '5px', fontSize: '110%' }} />);
-}
+import React from 'react';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <TabletBoundingBox>
-      <div className='flex' style={{ minWidth: '100%', height: '60px', backgroundColor: '#c0c0c0', top: '0', position: 'absolute', justifyContent: 'center' }}>
-      </div>
       <Header backToIndex='true' title='Burger'/>
-      <DescriptionSegment/>
-      <CookwareSegment/>
-      <IngredientsSegment/>
-      <StepsSegment/>
+      <Instructions recipeIndex='0'/>
     </TabletBoundingBox>
   </React.StrictMode>,
 )

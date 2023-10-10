@@ -1,73 +1,64 @@
 import React, { useState } from 'react';
-import RecipeContainer from './RecipeContainer';
 import data from '../data/recipes.json'
 
-function sortRecipes(sortVal){
-    let tempData = data;
-    if (sortVal) {
-    sortVal = sortVal.toLowerCase();
+function sortRecipes(sortVal) {
+  let RecipeContainer = document.getElementById('RecipeContainer')
+  let RecipeContainerHidden = document.getElementById('RecipeContainer').children.item(2)
+  let column = 0;
 
-      var re = new RegExp('.*' + sortVal + '.*', 'g');
+  RecipeContainer.children.item(0).innerHTML = ''
+  RecipeContainer.children.item(1).innerHTML = ''
 
-        tempData.forEach((recipe, index) => {
-          if (!re.test(recipe.Name.toLowerCase())) {
-            document.getElementById('recipe-' + index).style.display = 'none'
-          } else {
-            document.getElementById('recipe-' + index).style.display = 'block'
-          }
-        })
+  sortVal = sortVal.toLowerCase();
+  var re = new RegExp('.*' + sortVal + '.*', 'g');
 
-        tempData.forEach((recipe, index) => {
-          if (re.test(recipe.Cuisine.toLowerCase())) {
-            document.getElementById('recipe-' + index).style.display = 'block'
-          }
-        })
+  // Test for the name of the recipe
+  data.forEach((recipe, index) => {
+    if (re.test(recipe.Name.toLowerCase())) {
+      let copyElem = document.getElementById('recipe-' + index + '-copy').cloneNode(true)
+      copyElem.id = 'recipe-' + index;
+      RecipeContainer.children.item(column).appendChild(copyElem)
+      column = (column + 1) % 2;
     }
+  })
 
-    // const RecipeContainer = document.getElementById('RecipeContainer')
-    // let tempRecipeContainer = RecipeContainer;
-
-    // [...Array(RecipeContainer.children.item(0).childElementCount)].forEach((_, index) => {
-    //   console.log(RecipeContainer.children.item(0).children.item(index))
-    //   console.log(RecipeContainer.children.item(1).children.item(index))
-
-    //   if (index === 1) {
-    //     document.getElementById('recipe-' + index).style.display = 'none'
-    //   }
-    // }) 
-
-    
-
-
-    // alert("HERE")
- 
+  // Test for the cuisine
+  data.forEach((recipe, index) => {
+    let recipeCard = document.getElementById('recipe-' + index)
+    if (re.test(recipe.Cuisine.toLowerCase())) {
+      let copyElem = document.getElementById('recipe-' + index + '-copy').cloneNode(true)
+      copyElem.id = 'recipe-' + index;
+      RecipeContainer.children.item(column).appendChild(copyElem)
+      column = (column + 1) % 2;
+    }
+  })
 }
 
-function SearchBar(){
+function SearchBar() {
 
-    const [inputValue, setInputValue] = useState("");
-  
-    const updateRecipes = (value) => {
-      console.log(value);
-      if (!value) {
-        document.getElementById('RecipeSearchHeader').innerText = 'Popular Recipes'
-        sortRecipes(null)
+  const [_, setInputValue] = useState("");
 
-      } else {
-        document.getElementById('RecipeSearchHeader').innerText = 'Search: ' + value
-        sortRecipes(value)
-      }
-    };
-  
-    const handleInputChange = (event) => {
-      const newValue = event.target.value;
-      setInputValue(newValue);
-  
-      updateRecipes(newValue);
-    };
-  
-    return (<input onChange={handleInputChange} id='RecipeSearchBar' type='text' placeholder='Search For Recipe' style={{ position: 'absolute', top: '40%', right: '25%', backgroundColor: "#FFFFFFC0", height: '15%', width: '50%', borderRadius: '5px', fontSize: '110%' }} />);
-  }
+  const updateRecipes = (value) => {
+    console.log(value);
+    if (!value) {
+      document.getElementById('RecipeSearchHeader').innerText = 'Popular Recipes'
+      sortRecipes('.*')
 
-  export default SearchBar
+    } else {
+      document.getElementById('RecipeSearchHeader').innerText = 'Search: ' + value
+      sortRecipes(value)
+    }
+  };
+
+  const handleInputChange = (event) => {
+    const newValue = event.target.value;
+    setInputValue(newValue);
+
+    updateRecipes(newValue);
+  };
+
+  return (<input onChange={handleInputChange} id='RecipeSearchBar' type='text' placeholder='Search For Recipe' style={{ position: 'absolute', top: '40%', right: '25%', backgroundColor: "#FFFFFFC0", height: '15%', width: '50%', borderRadius: '5px', fontSize: '110%' }} />);
+}
+
+export default SearchBar
 

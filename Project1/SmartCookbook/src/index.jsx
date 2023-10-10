@@ -11,7 +11,7 @@ import React from 'react';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <TabletBoundingBox>
-      <h1>Good Morning Chef...</h1>
+      <h1>Welcome Chef...</h1>
       <UserCardContainer/>
     </TabletBoundingBox>
   </React.StrictMode>,
