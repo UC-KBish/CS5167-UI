@@ -3,7 +3,7 @@ body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   height: 100%;
-  font-size: 2vw;
+  /* font-size: 2vw; */
 }
 
 header {
@@ -46,15 +46,35 @@ h1 {
 }
 
 #menu {
-  position: fixed;
+  position: absolute;
   top: 0;
-  right: -100vw;
+  left: 100%;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: #333;
   color: #fff;
-  transition: right 0.3s ease;
+  transition: left 0.3s ease;
+  z-index: 100;
 }
+
+#UserContainer {
+  display: flex;
+  background-color: #e8e8e8;
+  position: absolute;
+  bottom: 0.25rem;
+  left: 0;
+  padding-right: 80%;
+  width: 100%;
+  z-index: 105;
+  color: #000000;
+}
+
+#UserPhoto {
+  height: 4ex;
+  margin: 1rem;
+  border-radius: 20%;
+}
+
 
 #menu ul {
   list-style: none;
@@ -77,6 +97,7 @@ h1 {
   border: none;
   cursor: pointer;
   height: 3rem;
+  z-index: 105;
 }
 
 #menu-button img,

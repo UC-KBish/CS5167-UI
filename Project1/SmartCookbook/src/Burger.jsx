@@ -1,6 +1,6 @@
 // import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './App.css'
+import './styles/App.css'
 
 import DescriptionSegment from './components/DescriptionSegment';
 import CookwareSegment from './components/CookwareSegment';

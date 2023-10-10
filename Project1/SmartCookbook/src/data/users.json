@@ -1,7 +1,41 @@
-[
-    {
-        "Name": "Kaleb Bishop",
-        "Saved Recipes": [],
-        "Photo": "Burrito.jpg"
-    }
-]
+{
+    "Selected": 0,
+    "Users": [
+        {
+            "Name": "Kaleb Bishop",
+            "UserName": "KBish",
+            "Saved Recipes": [],
+            "Photo": "Burrito.jpg"
+        },
+        {
+            "Name": "Kaleb Bishop",
+            "UserName": "KBish",
+            "Saved Recipes": [],
+            "Photo": "Burrito.jpg"
+        },
+        {
+            "Name": "Kaleb Bishop",
+            "UserName": "KBish",
+            "Saved Recipes": [],
+            "Photo": "Burrito.jpg"
+        },
+        {
+            "Name": "Kaleb Bishop",
+            "UserName": "KBish",
+            "Saved Recipes": [],
+            "Photo": "Burrito.jpg"
+        },
+        {
+            "Name": "Kaleb Bishop",
+            "UserName": "KBish",
+            "Saved Recipes": [],
+            "Photo": "Burrito.jpg"
+        },
+        {
+            "Name": null,
+            "UserName": "Add User?",
+            "Saved Recipes": [],
+            "Photo": "Add.png"
+        }
+    ]
+}

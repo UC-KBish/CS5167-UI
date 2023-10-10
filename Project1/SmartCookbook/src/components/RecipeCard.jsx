@@ -1,6 +1,6 @@
 function RecipeBottomBanner() {
     return (
-        <div style={{ backgroundColor: '#FFFFFFC0', width: '100%', height: '50px', bottom: '0' }}>
+        <div style={{ backgroundColor: '#e8e8e8', width: '100%', height: '50px', bottom: '0' }}>
             <div className="flex" style={{}}>
                 {/* <img src="SaveForLaterTrue.png" style={{width: '30px'}}></img> */}
                 <p>Info</p>

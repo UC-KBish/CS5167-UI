@@ -12,7 +12,7 @@ function TabletBoundingBox(props) {
     }
 
     return (
-        <div style={{ position: 'relative', borderColor: '#000000', borderWidth: '5px', borderStyle: 'solid', height: height, width: width, backgroundColor: "#c0c0c0", margin: 'auto', overflow: 'auto' }}>
+        <div style={{ position: 'relative', borderColor: '#000000', borderWidth: '0.25rem', borderStyle: 'solid', height: height, width: width, backgroundColor: "#c0c0c0", margin: 'auto', overflowY: 'auto', overflowX: 'hidden' }}>
             {props.children}
         </div>
     );
