@@ -3,23 +3,38 @@ import RecipeContainer from './RecipeContainer';
 import data from '../data/recipes.json'
 
 function sortRecipes(sortVal){
-    sortVal = sortVal.toLowerCase();
     let tempData = data;
     if (sortVal) {
-        
+    sortVal = sortVal.toLowerCase();
+
+      var re = new RegExp('.*' + sortVal + '.*', 'g');
+
+        tempData.forEach((recipe, index) => {
+          if (!re.test(recipe.Name.toLowerCase())) {
+            document.getElementById('recipe-' + index).style.display = 'none'
+          } else {
+            document.getElementById('recipe-' + index).style.display = 'block'
+          }
+        })
+
+        tempData.forEach((recipe, index) => {
+          if (re.test(recipe.Cuisine.toLowerCase())) {
+            document.getElementById('recipe-' + index).style.display = 'block'
+          }
+        })
     }
 
-    const RecipeContainer = document.getElementById('RecipeContainer')
-    let tempRecipeContainer = RecipeContainer;
+    // const RecipeContainer = document.getElementById('RecipeContainer')
+    // let tempRecipeContainer = RecipeContainer;
 
-    [...Array(RecipeContainer.children.item(0).childElementCount)].forEach((_, index) => {
-      console.log(RecipeContainer.children.item(0).children.item(index))
-      console.log(RecipeContainer.children.item(1).children.item(index))
+    // [...Array(RecipeContainer.children.item(0).childElementCount)].forEach((_, index) => {
+    //   console.log(RecipeContainer.children.item(0).children.item(index))
+    //   console.log(RecipeContainer.children.item(1).children.item(index))
 
-      if (index === 1) {
-        document.getElementById('recipe-' + index).style.display = 'none'
-      }
-    }) 
+    //   if (index === 1) {
+    //     document.getElementById('recipe-' + index).style.display = 'none'
+    //   }
+    // }) 
 
     
 
