@@ -43,7 +43,7 @@ function IngredientsSegment() {
 function Step(props) {
 return (<>
 <h3 id={props.id} style={{marginBottom: 0}}>{'Step ' + (parseInt(props.index) + 1) + ': ' + data[props.recipeIndex].Steps[props.index].Title}</h3>
-            <div style={{backgroundColor: '#303030', margin: 0, width: '100%', height: '2px'}}/>
+            <div style={{backgroundColor: '#303030', margin: 0, width: '100%', height: '0.125rem'}}/>
                 <p>{data[props.recipeIndex].Steps[props.index].Instruction}</p>
             </>);
 }

@@ -2,33 +2,37 @@ import React, { useState } from 'react';
 import data from '../data/recipes.json'
 
 function sortRecipes(sortVal) {
-  let RecipeContainer = document.getElementById('RecipeContainer')
-  let RecipeContainerHidden = document.getElementById('RecipeContainer').children.item(2)
+  const RecipeContainer = document.getElementById('RecipeContainer')
   let column = 0;
 
-  RecipeContainer.children.item(0).innerHTML = ''
-  RecipeContainer.children.item(1).innerHTML = ''
+  let len = RecipeContainer.children.item(0).childElementCount;
+
+  for (let i = 0; i < len; i++) {
+    RecipeContainer.children.item(2).appendChild(RecipeContainer.children.item(0).firstChild)
+  }
+
+  len = RecipeContainer.children.item(1).childElementCount;
+
+  for (let i = 0; i < len; i++) {
+    RecipeContainer.children.item(2).appendChild(RecipeContainer.children.item(1).firstChild)
+  }
 
   sortVal = sortVal.toLowerCase();
+  
   var re = new RegExp('.*' + sortVal + '.*', 'g');
 
   // Test for the name of the recipe
   data.forEach((recipe, index) => {
     if (re.test(recipe.Name.toLowerCase())) {
-      let copyElem = document.getElementById('recipe-' + index + '-copy').cloneNode(true)
-      copyElem.id = 'recipe-' + index;
-      RecipeContainer.children.item(column).appendChild(copyElem)
+      RecipeContainer.children.item(column).appendChild(document.getElementById('recipe-' + index))
       column = (column + 1) % 2;
     }
   })
 
   // Test for the cuisine
   data.forEach((recipe, index) => {
-    let recipeCard = document.getElementById('recipe-' + index)
     if (re.test(recipe.Cuisine.toLowerCase())) {
-      let copyElem = document.getElementById('recipe-' + index + '-copy').cloneNode(true)
-      copyElem.id = 'recipe-' + index;
-      RecipeContainer.children.item(column).appendChild(copyElem)
+      RecipeContainer.children.item(column).appendChild(document.getElementById('recipe-' + index))
       column = (column + 1) % 2;
     }
   })
@@ -39,7 +43,6 @@ function SearchBar() {
   const [_, setInputValue] = useState("");
 
   const updateRecipes = (value) => {
-    console.log(value);
     if (!value) {
       document.getElementById('RecipeSearchHeader').innerText = 'Popular Recipes'
       sortRecipes('.*')

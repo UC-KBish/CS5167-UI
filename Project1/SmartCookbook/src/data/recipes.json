@@ -3,7 +3,8 @@
         "Name": "Burger",
         "Image": "Burger.jpg",
         "Cuisine": "American",
-        "Likes": 103,
+        "Ratings": 103,
+        "RatingVal": 3.8,
         "Cooktime": 20,
         "Description": "The juicy American burger is a tantalizing treat for your taste buds. The star of this culinary delight is the perfectly seasoned and cooked juicy patty, which is nestled between two halves of a soft and slightly toasted bun. As you take your first bite, the juicy goodness of the meat bursts forth, tantalizing your palate with its succulent flavor. But that's not all; the burger experience is elevated by an array of juicy toppings. Crisp lettuce, ripe tomato slices, and crunchy pickles add a refreshing contrast to the juicy meat. Onions, whether raw and tangy or caramelized to perfection, contribute their own unique juiciness to the mix. Of course, a juicy American burger often wouldn't be complete without a generous layer of melted cheese, which adds a creamy and savory element to the overall juiciness of the dish. And let's not forget the mouthwatering condiments like ketchup, mustard, and mayonnaise, which not only enhance the flavor but also infuse the burger with an additional layer of juiciness. With every bite, you experience a delightful explosion of juiciness, a harmonious blend of flavors and textures that has made the American burger an enduring favorite in the world of cuisine. Whether enjoyed with a side of crispy french fries or accompanied by a refreshing beverage, the juicy American burger is a culinary masterpiece that continues to satisfy cravings and bring joy to diners across the United States and beyond.",
         "Steps": [
@@ -49,6 +50,8 @@
         "Name": "Pizza",
         "Cuisine": "Italian",
         "Image": "Pizza.jpg",
+        "Ratings": 88,
+        "RatingVal": 3.9,
         "Likes": 152,
         "Cooktime": 15
     },
@@ -56,6 +59,8 @@
         "Name": "Taco",
         "Cuisine": "Mexican",
         "Image": "Taco.jpg",
+        "Ratings": 87,
+        "RatingVal": 4.2,
         "Likes": 120,
         "Cooktime": 25
     },
@@ -63,6 +68,8 @@
         "Name": "Pasta",
         "Cuisine": "Italian",
         "Image": "Pasta.jpg",
+        "Ratings": 56,
+        "RatingVal": 3.5,
         "Likes": 88,
         "Cooktime": 12
     },
@@ -70,6 +77,8 @@
         "Name": "Biryani",
         "Cuisine": "Indian",
         "Image": "Biryani.jpg",
+        "Ratings": 124,
+        "RatingVal": 4.0,
         "Likes": 86,
         "Cooktime": 45
     },
@@ -77,6 +86,8 @@
         "Name": "Steak",
         "Cuisine": "American",
         "Image": "Steak.jpg",
+        "Ratings": 68,
+        "RatingVal": 3.6,
         "Likes": 135,
         "Cooktime": 18
     },
@@ -84,6 +95,8 @@
         "Name": "Sushi",
         "Cuisine": "Japanese",
         "Image": "Sushi.jpg",
+        "Ratings": 92,
+        "RatingVal": 3.9,
         "Likes": 92,
         "Cooktime": 28
     },
@@ -91,6 +104,8 @@
         "Name": "Pad Thai",
         "Cuisine": "Thai",
         "Image": "Pad_Thai.jpg",
+        "Ratings": 109,
+        "RatingVal": 4.1,
         "Likes": 78,
         "Cooktime": 20
     },
@@ -98,6 +113,8 @@
         "Name": "Burrito",
         "Cuisine": "Mexican",
         "Image": "Burrito.jpg",
+        "Ratings": 77,
+        "RatingVal": 3.7,
         "Likes": 95,
         "Cooktime": 22
     },
@@ -105,6 +122,8 @@
         "Name": "Salmon",
         "Cuisine": "Seafood",
         "Image": "Salmon.jpg",
+        "Ratings": 135,
+        "RatingVal": 4.3,
         "Likes": 87,
         "Cooktime": 30
     },
@@ -112,6 +131,8 @@
         "Name": "Ramen",
         "Cuisine": "Japanese",
         "Image": "Ramen.jpg",
+        "Ratings": 42,
+        "RatingVal": 3.3,
         "Likes": 112,
         "Cooktime": 18
     },
@@ -119,6 +140,8 @@
         "Name": "Chicken Alfredo",
         "Cuisine": "Italian",
         "Image": "Chicken_Alfredo.jpg",
+        "Ratings": 81,
+        "RatingVal": 3.8,
         "Likes": 78,
         "Cooktime": 25
     },
@@ -126,6 +149,8 @@
         "Name": "Tandoori Chicken",
         "Cuisine": "Indian",
         "Image": "Tandoori_Chicken.jpg",
+        "Ratings": 116,
+        "RatingVal": 4.2,
         "Likes": 103,
         "Cooktime": 35
     },
@@ -133,6 +158,8 @@
         "Name": "Pho",
         "Cuisine": "Vietnamese",
         "Image": "Pho.jpg",
+        "Ratings": 98,
+        "RatingVal": 4.0,
         "Likes": 88,
         "Cooktime": 20
     },
@@ -140,6 +167,8 @@
         "Name": "Tofu Stir-Fry",
         "Cuisine": "Asian",
         "Image": "Tofu_Stir_Fry.jpg",
+        "Ratings": 72,
+        "RatingVal": 3.7,
         "Likes": 69,
         "Cooktime": 15
     },
@@ -147,6 +176,8 @@
         "Name": "Lasagna",
         "Cuisine": "Italian",
         "Image": "Lasagna.jpg",
+        "Ratings": 63,
+        "RatingVal": 3.5,
         "Likes": 125,
         "Cooktime": 40
     },
@@ -154,6 +185,8 @@
         "Name": "Chow Mein",
         "Cuisine": "Chinese",
         "Image": "Chow_Mein.jpg",
+        "Ratings": 54,
+        "RatingVal": 3.4,
         "Likes": 94,
         "Cooktime": 22
     },
@@ -161,6 +194,8 @@
         "Name": "Gyros",
         "Cuisine": "Greek",
         "Image": "Gyro.jpg",
+        "Ratings": 120,
+        "RatingVal": 4.1,
         "Likes": 80,
         "Cooktime": 18
     }

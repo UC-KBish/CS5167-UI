@@ -11,7 +11,11 @@
     margin: 0;
     padding-top: 0.5rem;
     padding-bottom: 1rem;
-    background-color: #a0a0a0;
+}
+
+.recipe-instruction-card > h3 {
+    margin: 0;
+    padding: 0;
 }
 
 .recipe-instruction-card > div > img {

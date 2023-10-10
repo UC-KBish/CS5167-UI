@@ -1,7 +1,7 @@
 import userData from '../data/users.json'
 
 function HamburgerMenu() {
-    const handleInputChange = () => {
+    const handleClick = () => {
         const menu = document.getElementById('menu');
         const menu_button = document.getElementById('menu-button');
         const menu_button_back = document.getElementById('menu-button-back');
@@ -40,10 +40,10 @@ function HamburgerMenu() {
                 <li><a href="#">Saved</a></li>
             </ul>
         </div>
-        <button id="menu-button" onClick={handleInputChange}>
+        <button id="menu-button" onClick={handleClick}>
             <img src='HamburgerMenu.png' />
         </button>
-        <button id="menu-button-back" onClick={handleInputChange}>
+        <button id="menu-button-back" onClick={handleClick}>
             <img src='ArrowBack.png' />
         </button>
     </div>);
