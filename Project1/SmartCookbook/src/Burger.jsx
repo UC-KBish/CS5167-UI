@@ -140,4 +140,5 @@ if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
   recognition.start();
 } else {
   console.error('Speech recognition not supported in this browser.');
+  alert('Speech recognition not supported in this browser.');
 }
