@@ -1,11 +1,31 @@
 import userData from '../data/users.json'
 
+import getCookie from '../functions/GetCookie'
+
+import '../styles/Hamburger.css' 
+
+function ListItem(props) {
+    return (
+    <li className='hamburger-list-li'>
+        <a href={props.href}>
+            <div className='flex'>
+                <p>{props.text}</p>
+                <img src={props.src}></img>
+            </div>
+        </a>
+    </li>
+    )
+}
+
 function HamburgerMenu() {
     const handleClick = () => {
         const menu = document.getElementById('menu');
         const menu_button = document.getElementById('menu-button');
         const menu_button_back = document.getElementById('menu-button-back');
         const blur_screen = document.getElementById('blur-screen');
+
+        const tablet_bounding = document.getElementById('tablet-bounding')
+        menu.style.width = parseInt(tablet_bounding.style.width) * 0.4 + 'px';
 
         if (menu.style.left === '60%') {
             menu.style.left = '100%';
@@ -24,20 +44,25 @@ function HamburgerMenu() {
         }
     };
 
-    const user = userData.Users[userData.Selected]
-    const userStr = JSON.stringify(userData)
+    let userDataCopy = userData
+
+    if (getCookie('userData')) {
+        userDataCopy = getCookie('userData')
+    }
+
+    let user = userDataCopy.Users[parseInt(userDataCopy.Selected)]
 
     return (<div id='HamburgerContainer'>
-        <p id='userdata' hidden>{userStr}</p>
         <div id='blur-screen' className='blur'></div>
         <div id='menu'>
             <a id='UserContainer' href='/'>
                 <img id='UserPhoto' src={user.Photo} />
                 <h3 id='UserName'>{user.UserName}</h3>
             </a>
-            <ul>
-                <li><a href="/search">Search</a></li>
-                <li><a href="#">Saved</a></li>
+            <ul id='hamburger-list'>
+                <ListItem text='Search' href='/search.html' src='Search.png'/>
+                <ListItem text='Saved' href='/saved.html' src='SaveForLaterFalse.png'/>
+                <ListItem text='Completed' href='/completed.html' src='Finish.png'/>
             </ul>
         </div>
         <button id="menu-button" onClick={handleClick}>

@@ -7,6 +7,17 @@
         "RatingVal": 3.8,
         "Cooktime": 20,
         "Description": "The juicy American burger is a tantalizing treat for your taste buds. The star of this culinary delight is the perfectly seasoned and cooked juicy patty, which is nestled between two halves of a soft and slightly toasted bun. As you take your first bite, the juicy goodness of the meat bursts forth, tantalizing your palate with its succulent flavor. But that's not all; the burger experience is elevated by an array of juicy toppings. Crisp lettuce, ripe tomato slices, and crunchy pickles add a refreshing contrast to the juicy meat. Onions, whether raw and tangy or caramelized to perfection, contribute their own unique juiciness to the mix. Of course, a juicy American burger often wouldn't be complete without a generous layer of melted cheese, which adds a creamy and savory element to the overall juiciness of the dish. And let's not forget the mouthwatering condiments like ketchup, mustard, and mayonnaise, which not only enhance the flavor but also infuse the burger with an additional layer of juiciness. With every bite, you experience a delightful explosion of juiciness, a harmonious blend of flavors and textures that has made the American burger an enduring favorite in the world of cuisine. Whether enjoyed with a side of crispy french fries or accompanied by a refreshing beverage, the juicy American burger is a culinary masterpiece that continues to satisfy cravings and bring joy to diners across the United States and beyond.",
+        "Cookware": [
+            "Grill, stovetop pan, or griddle",
+            "Spatula",
+            "Cooking thermometer (optional but recommended)"
+        ],
+        "Ingredients": [
+            "Ground beef (typically 80% lean, 20% fat is a good choice)",
+            "Burger buns",
+            "Salt and pepper",
+            "Optional toppings (lettuce, tomato, onion, cheese, pickles, condiments, etc.)"
+        ],
         "Steps": [
             {
                 "Title": "Prepare the Meat",

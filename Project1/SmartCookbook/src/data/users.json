@@ -1,40 +1,41 @@
 {
-    "Selected": 0,
+    "Selected": "0",
     "Users": [
         {
-            "Name": "Kaleb Bishop",
-            "UserName": "KBish",
+            "UserName": "Kaleb",
             "Saved Recipes": [],
+            "Completed Recipes": [],
             "Photo": "Burrito.jpg"
         },
         {
-            "Name": "Kaleb Bishop",
-            "UserName": "KBish",
+            "UserName": "Joshua",
             "Saved Recipes": [],
-            "Photo": "Burrito.jpg"
+            "Completed Recipes": [],
+            "Photo": "Pho.jpg"
         },
         {
-            "Name": "Kaleb Bishop",
-            "UserName": "KBish",
+            "UserName": "Emily",
             "Saved Recipes": [],
-            "Photo": "Burrito.jpg"
+            "Completed Recipes": [],
+            "Photo": "Steak.jpg"
         },
         {
-            "Name": "Kaleb Bishop",
-            "UserName": "KBish",
+            "UserName": "Grace",
             "Saved Recipes": [],
-            "Photo": "Burrito.jpg"
+            "Completed Recipes": [],
+            "Photo": "Sushi.jpg"
         },
         {
-            "Name": "Kaleb Bishop",
-            "UserName": "KBish",
+            "UserName": "Ally",
             "Saved Recipes": [],
-            "Photo": "Burrito.jpg"
+            "Completed Recipes": [],
+            "Photo": "Gyro.jpg"
         },
         {
             "Name": null,
             "UserName": "Add User?",
             "Saved Recipes": [],
+            "Completed Recipes": [],
             "Photo": "Add.png"
         }
     ]

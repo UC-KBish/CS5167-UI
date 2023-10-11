@@ -7,12 +7,12 @@ function Header(props) {
         title = <a href='/search.html' style={{ textDecoration: 'none', 'color': 'black' }}>{title}</a>
     }
 
-    return (
+    return (<>
         <header>
             {title}
             <HamburgerMenu/>
         </header>
-    );
+       </>);
 
 }
 

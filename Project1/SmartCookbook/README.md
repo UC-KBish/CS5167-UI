@@ -1,0 +1,1 @@
+This project was created using React and could be ran using the 'npm run dev' command. The resolution of the screen that I was able to 

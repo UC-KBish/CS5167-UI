@@ -18,24 +18,33 @@ function sortRecipes(sortVal) {
   }
 
   sortVal = sortVal.toLowerCase();
-  
-  var re = new RegExp('.*' + sortVal + '.*', 'g');
+
+  var re = new RegExp(sortVal, 'g');
+  let addedRecipes = []
 
   // Test for the name of the recipe
   data.forEach((recipe, index) => {
     if (re.test(recipe.Name.toLowerCase())) {
       RecipeContainer.children.item(column).appendChild(document.getElementById('recipe-' + index))
       column = (column + 1) % 2;
+      addedRecipes.push(index)
     }
   })
 
   // Test for the cuisine
   data.forEach((recipe, index) => {
-    if (re.test(recipe.Cuisine.toLowerCase())) {
+    if (!(parseInt(index) in addedRecipes) && re.test(recipe.Cuisine.toLowerCase())) {
       RecipeContainer.children.item(column).appendChild(document.getElementById('recipe-' + index))
       column = (column + 1) % 2;
+      addedRecipes.push(index)
     }
   })
+
+  if (addedRecipes.length === 0) {
+    document.getElementById('no-recipes').hidden = false;
+  } else {
+    document.getElementById('no-recipes').hidden = true;
+  }
 }
 
 function SearchBar() {
@@ -45,7 +54,7 @@ function SearchBar() {
   const updateRecipes = (value) => {
     if (!value) {
       document.getElementById('RecipeSearchHeader').innerText = 'Popular Recipes'
-      sortRecipes('.*')
+      sortRecipes('')
 
     } else {
       document.getElementById('RecipeSearchHeader').innerText = 'Search: ' + value

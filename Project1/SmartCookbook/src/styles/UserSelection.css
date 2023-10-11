@@ -23,11 +23,19 @@
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;
+    overflow: hidden;
 }
 
-.UserCardContainer > div > button > img {
+.UserCardContainer > div > button > div > img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.UserCardContainer > div > button > div {
     margin: 0 auto;
-    width: 80%;
-    border-radius: 50%;
+    max-height: 7rem;
+    max-width: 7rem;
     overflow: hidden;
+    border-radius: 50%;
 }

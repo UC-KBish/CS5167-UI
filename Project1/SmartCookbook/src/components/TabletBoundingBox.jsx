@@ -1,5 +1,5 @@
 function TabletBoundingBox(props) {
-    let height = window.innerHeight - 10;
+    let height = window.outerHeight - 10;
     let width = window.innerWidth;
     const SCREEN_RATIO = 1080 / 810; // iPad ratio
 
@@ -12,8 +12,8 @@ function TabletBoundingBox(props) {
     }
 
     return (
-        <div style={{ position: 'relative', borderColor: '#000000', borderWidth: '0.25rem', borderStyle: 'solid', height: height, width: width, backgroundColor: "#c0c0c0", margin: 'auto', overflowY: 'auto', overflowX: 'hidden' }}>
-            {props.children}
+        <div id='tablet-bounding' style={{ height: height, width: width }}>
+                {props.children}
         </div>
     );
 }

@@ -1,4 +1,4 @@
-// import React from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './styles/App.css'
 import './styles/RecipePage.css'
@@ -7,24 +7,48 @@ import Instructions from './components/Instructions';
 import TabletBoundingBox from './components/TabletBoundingBox'
 import Header from './components/Header'
 
-import React from 'react';
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <TabletBoundingBox>
-      <Header backToIndex='true' title='Burger'/>
-      <Instructions recipeIndex='0'/>
+      <Header backToIndex='true' title='Burger' />
+      <Instructions recipeIndex='0' />
+      <div className='flex' style={{ position: 'fixed', top: 0, left: 0, alignItems: 'center', width: '100%', zIndex: 110 }}>
+        <div hidden id='voice-screen' className='recipe-instruction-card'>
+          <h3>How May I Help?</h3>
+          <div />
+          <p id='voice-screen-text'>Recognised: </p>
+        </div>
+      </div>
     </TabletBoundingBox>
   </React.StrictMode>,
 )
 
+let active = false;
+
 function scrollToElement(id) {
-  const element = document.getElementById(id);
-  element.scrollIntoView({ behavior: "smooth" }); // "smooth" for smooth scrolling
+  let blur_screen = document.getElementById('blur-screen');
+  let voice_screen = document.getElementById('voice-screen');
+  let voice_screen_text = document.getElementById('voice-screen-text');
+
+  voice_screen.style.display = 'none'
+
+  blur_screen.style.top = '-100vh';
+  blur_screen.style.backdropFilter = 'blur(0px)';
+  blur_screen.style.backgroundColor = '#ffffff00';
+
+  voice_screen_text.innerText = 'Recognised: '
+
+  active = false
+
+  document.getElementById(id).scrollIntoView({ behavior: "smooth" });
 }
 
 // Check if the browser supports the SpeechRecognition API
 if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+  let blur_screen;
+  let voice_screen;
+  let voice_screen_text;
+
   const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
 
   // Configure recognition settings (optional)
@@ -33,6 +57,11 @@ if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
 
   // Event listeners for speech recognition
   recognition.onstart = () => {
+    blur_screen = document.getElementById('blur-screen');
+    voice_screen = document.getElementById('voice-screen');
+    voice_screen_text = document.getElementById('voice-screen-text');
+
+    voice_screen.style.width = (0.8 * parseInt(document.getElementById('tablet-bounding').style.width)).toString() + 'px'
     console.log('Listening...');
   };
 
@@ -42,40 +71,72 @@ if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
 
     const regex = /[ ]*okay cookbook(.*)/.exec(result)
 
-    if (regex) {
+    if (regex || active) {
 
-      // Add visual queue here
-      const query = regex[1];
+      active = true
 
+      voice_screen.style.display = 'block'
+      blur_screen.style.top = '0vh';
+      blur_screen.style.backdropFilter = 'blur(0.5px)';
+      blur_screen.style.backgroundColor = '#ffffff70';
+
+      let query = result;
+
+      if (regex) {
+        if (regex.length > 0) {
+          query = regex[1]
+        }
+      }
+
+      voice_screen_text.innerText = 'Recognised: ' + query
 
       let subquery = /.*step (\w+)/.exec(query)
       if (subquery) {
-        console.log('Subquery: ', subquery[1])
-        subquery[1] = subquery[1].replace('1','one');        
-        subquery[1] = subquery[1].replace('2','two');        
-        subquery[1] = subquery[1].replace('3','three');        
-        subquery[1] = subquery[1].replace('4','four');        
-        subquery[1] = subquery[1].replace('5','five');        
-        subquery[1] = subquery[1].replace('6','six');        
-        subquery[1] = subquery[1].replace('7','seven');        
-        subquery[1] = subquery[1].replace('8','eight');        
-        subquery[1] = subquery[1].replace('9','nine');        
-        subquery[1] = subquery[1].replace('10','ten');
-        console.log('Subquery: ', subquery[1])
+        subquery[1] = subquery[1].replace('one', '1');
+        subquery[1] = subquery[1].replace('two', '2');
+        subquery[1] = subquery[1].replace('three', '3');
+        subquery[1] = subquery[1].replace('four', '4');
+        subquery[1] = subquery[1].replace('five', '5');
+        subquery[1] = subquery[1].replace('six', '6');
+        subquery[1] = subquery[1].replace('seven', '7');
+        subquery[1] = subquery[1].replace('eight', '8');
+        subquery[1] = subquery[1].replace('nine', '9');
+        subquery[1] = subquery[1].replace('ten', '10');
 
         scrollToElement('step_' + subquery[1])
-      } 
-    }
+        return
+      }
+      subquery = /description/.test(query)
+      if (subquery) {
+        scrollToElement('description')
+        return
+      }
 
-    // You can do something with the recognized text here
-    // For example, update a text field with the recognized speech
+      subquery = /cookware/.test(query)
+      if (subquery) {
+        scrollToElement('cookware')
+        return
+      }
+
+      subquery = /ingredients/.test(query)
+      if (subquery) {
+        scrollToElement('ingredients')
+        return
+      }
+
+      subquery = /steps/.test(query)
+      if (subquery) {
+        scrollToElement('steps')
+        return
+      }
+
+    }
   };
 
   recognition.onerror = (event) => {
     console.error('Speech recognition error:', event.error);
   };
 
-  // Start the recognition
   recognition.start();
 } else {
   console.error('Speech recognition not supported in this browser.');
